@@ -167,7 +167,7 @@ export function AddServiceModal({
                   <Label htmlFor={`api-${field.key}`}>{field.label}</Label>
                   <Input
                     id={`api-${field.key}`}
-                    className="rounded-xl"
+                    className="rounded-2xl"
                     value={apiConfig[field.key] ?? ""}
                     onChange={(e) => {
                       setApiConfig((prev) => ({

@@ -50,7 +50,7 @@ export function SettingsPage() {
         {status && <p className="text-sm text-emerald-600">{status}</p>}
       </div>
 
-      <Card>
+      <Card className="rounded-2xl">
         <CardContent className="space-y-2 p-4">
           <Label htmlFor="theme">Theme</Label>
           <Select
@@ -65,7 +65,7 @@ export function SettingsPage() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="rounded-2xl">
         <CardContent className="space-y-2 p-4">
           <Label htmlFor="search-engine">Default web search engine</Label>
           <Select
@@ -82,7 +82,7 @@ export function SettingsPage() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="rounded-2xl">
         <CardContent className="space-y-2 p-4">
           <Label htmlFor="site-title">Site title (browser tab)</Label>
           <Input
@@ -94,14 +94,14 @@ export function SettingsPage() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="rounded-2xl">
         <CardContent className="space-y-2 p-4">
           <Label htmlFor="favicon">Upload favicon</Label>
           <Input
             id="favicon"
             type="file"
             accept="image/*,.ico"
-            className="pt-1 file:mr-3 file:rounded-md file:border file:border-input file:px-3 file:py-1 file:text-sm"
+            className="pt-1 file:mr-3 file:rounded-xl file:border file:border-input file:px-3 file:py-1 file:text-sm"
             onChange={async (e) => {
               const file = e.target.files?.[0];
               if (!file) {

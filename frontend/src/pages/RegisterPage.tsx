@@ -29,7 +29,7 @@ export function RegisterPage() {
           }
         }}
       >
-        <Card>
+        <Card className="rounded-2xl">
           <CardContent className="space-y-3 p-6">
             <h1 className="text-xl font-semibold">Create account</h1>
             {error && <p className="text-sm text-red-500">{error}</p>}

@@ -28,7 +28,7 @@ export function LoginPage() {
           }
         }}
       >
-        <Card>
+        <Card className="rounded-2xl">
           <CardContent className="space-y-3 p-6">
             <h1 className="text-xl font-semibold">Sign in</h1>
             {error && <p className="text-sm text-red-500">{error}</p>}

@@ -18,7 +18,7 @@ export function PredefinedAppPicker({ selectedId, onSelect }: Props) {
       >
         Application Type
       </Label>
-      <Card className="bg-card/80 shadow-sm">
+      <Card className="rounded-2xl bg-card/80 shadow-sm">
         <CardContent className="p-3">
           <Select
             id="predefined-app"
@@ -33,8 +33,8 @@ export function PredefinedAppPicker({ selectedId, onSelect }: Props) {
             ))}
           </Select>
           {selectedApp && (
-            <div className="mt-3 flex items-center gap-2 rounded-xl border border-border bg-muted/50 p-2">
-              <img src={selectedApp.icon} alt="" className="h-7 w-7 rounded-md" />
+            <div className="mt-3 flex items-center gap-2 rounded-2xl border border-border bg-muted/50 p-2">
+              <img src={selectedApp.icon} alt="" className="h-7 w-7 rounded-xl" />
               <div>
                 <p className="text-sm font-medium text-foreground">{selectedApp.name}</p>
                 <p className="text-xs text-muted-foreground">Predefined icon and API fields loaded</p>

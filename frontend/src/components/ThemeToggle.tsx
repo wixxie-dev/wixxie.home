@@ -37,7 +37,7 @@ export function ThemeToggle({ onThemeChange }: { onThemeChange?: (theme: ThemeOp
         <ActiveIcon className="h-4 w-4" />
       </Button>
       {open && (
-        <div className="absolute right-0 z-30 mt-2 w-40 rounded-2xl border border-zinc-200 bg-white/95 p-1 shadow-xl dark:border-zinc-700 dark:bg-zinc-900/95">
+        <div className="absolute right-0 z-30 mt-2 w-40 rounded-2xl border border-zinc-200 bg-white/95 p-2 shadow-xl dark:border-zinc-700 dark:bg-zinc-900/95">
           {themeItems.map((item) => {
             const Icon = item.icon;
             const isActive = item.id === theme;

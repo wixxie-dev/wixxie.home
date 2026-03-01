@@ -29,7 +29,7 @@ export function ServiceCard({ service, onEdit, onDelete, onTogglePinned, onRefre
           type="button"
           variant="ghost"
           size="icon"
-          className="h-7 w-7 rounded-lg p-1 text-zinc-500 hover:bg-zinc-100 hover:text-violet-600 dark:hover:bg-zinc-800 dark:hover:text-violet-300"
+          className="h-7 w-7 rounded-xl p-1 text-zinc-500 hover:bg-zinc-100 hover:text-violet-600 dark:hover:bg-zinc-800 dark:hover:text-violet-300"
           {...attributes}
           {...listeners}
           aria-label="Drag service"
@@ -50,9 +50,9 @@ export function ServiceCard({ service, onEdit, onDelete, onTogglePinned, onRefre
         >
           <div className="flex items-center gap-2">
             {service.icon ? (
-              <img src={service.icon} alt="" className="h-9 w-9 rounded-lg ring-1 ring-black/5 dark:ring-white/10" />
+              <img src={service.icon} alt="" className="h-9 w-9 rounded-xl ring-1 ring-black/5 dark:ring-white/10" />
             ) : (
-              <div className="h-9 w-9 rounded-lg bg-zinc-200 dark:bg-zinc-700" />
+              <div className="h-9 w-9 rounded-xl bg-zinc-200 dark:bg-zinc-700" />
             )}
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold text-zinc-900 dark:text-zinc-100">{service.name}</p>
@@ -76,7 +76,7 @@ export function ServiceCard({ service, onEdit, onDelete, onTogglePinned, onRefre
           {Object.entries(service.stats).map(([key, value]) => (
             <span
               key={key}
-              className="inline-flex items-center gap-1 rounded-md border border-zinc-200 bg-zinc-50 px-2 py-1 text-[11px] leading-none text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-200"
+              className="inline-flex items-center gap-1 rounded-xl border border-zinc-200 bg-zinc-50 px-2 py-1 text-[11px] leading-none text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-200"
             >
               <span className="font-medium capitalize text-zinc-500 dark:text-zinc-400">{key}</span>
               <span className="font-semibold text-violet-700 dark:text-violet-300">{value}</span>
@@ -90,7 +90,7 @@ export function ServiceCard({ service, onEdit, onDelete, onTogglePinned, onRefre
           type="button"
           variant="ghost"
           size="icon"
-          className="h-8 w-8 rounded-lg p-1.5 hover:bg-zinc-100 hover:text-violet-600 dark:hover:bg-zinc-800 dark:hover:text-violet-300"
+          className="h-8 w-8 rounded-xl p-1.5 hover:bg-zinc-100 hover:text-violet-600 dark:hover:bg-zinc-800 dark:hover:text-violet-300"
           onClick={() => onRefresh(service)}
           title="Refresh stats"
         >
@@ -100,7 +100,7 @@ export function ServiceCard({ service, onEdit, onDelete, onTogglePinned, onRefre
           type="button"
           variant="ghost"
           size="icon"
-          className={`h-8 w-8 rounded-lg p-1.5 hover:bg-zinc-100 hover:text-violet-600 dark:hover:bg-zinc-800 dark:hover:text-violet-300 ${
+          className={`h-8 w-8 rounded-xl p-1.5 hover:bg-zinc-100 hover:text-violet-600 dark:hover:bg-zinc-800 dark:hover:text-violet-300 ${
             service.isPinned ? "text-violet-600 dark:text-violet-300" : ""
           }`}
           onClick={() => onTogglePinned(service)}
@@ -112,7 +112,7 @@ export function ServiceCard({ service, onEdit, onDelete, onTogglePinned, onRefre
           type="button"
           variant="ghost"
           size="icon"
-          className="h-8 w-8 rounded-lg p-1.5 hover:bg-zinc-100 hover:text-violet-600 dark:hover:bg-zinc-800 dark:hover:text-violet-300"
+          className="h-8 w-8 rounded-xl p-1.5 hover:bg-zinc-100 hover:text-violet-600 dark:hover:bg-zinc-800 dark:hover:text-violet-300"
           onClick={() => onEdit(service)}
           title="Edit"
           aria-label="Edit"
@@ -123,7 +123,7 @@ export function ServiceCard({ service, onEdit, onDelete, onTogglePinned, onRefre
           type="button"
           variant="ghost"
           size="icon"
-          className="h-8 w-8 rounded-lg p-1.5 text-red-500 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/20 dark:hover:text-red-300"
+          className="h-8 w-8 rounded-xl p-1.5 text-red-500 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/20 dark:hover:text-red-300"
           onClick={() => onDelete(service)}
           title="Delete"
         >
