@@ -1,0 +1,14 @@
+services:
+  wixxie-home:
+    build: .
+    container_name: wixxie-home
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - POLL_INTERVAL_MS=300000
+      - JWT_SECRET=change-this-secret
+      - DISABLE_REGISTRATION=false
+    volumes:
+      - ./backend/data:/app/backend/data
+    restart: unless-stopped
