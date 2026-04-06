@@ -89,15 +89,18 @@ docker compose up -d
 
 ## CI and release automation
 
-This repository includes two GitHub Actions workflows:
+This repository includes three GitHub Actions workflows:
 
 - `CI` (`.github/workflows/ci.yml`)
   - Runs on pull requests and pushes to `main`
   - Installs dependencies and runs `bun run build`
 - `Release` (`.github/workflows/release.yml`)
   - Runs on version tags like `v1.2.3`
-  - Builds and pushes Docker image to GHCR
+  - Builds and pushes only the matching version tag to GHCR (immutable release tag pattern)
   - Creates a GitHub Release with generated notes
+- `Publish Latest` (`.github/workflows/publish-latest.yml`)
+  - Runs on pushes to `main`
+  - Builds and pushes only `ghcr.io/wixxie-dev/wixxie-home:latest`
 
 ### Create a release
 
@@ -111,6 +114,12 @@ git push origin v0.1.0
 
 3. Wait for the `Release` workflow to finish
 4. Pull the new tag in deployment environments by setting `WIXXIE_TAG`
+
+### Tag immutability pattern
+
+- `latest` is only published from `main`
+- Version tags (`vX.Y.Z`) are only published from git tags
+- This avoids accidental overwrite of release tags during normal branch pushes
 
 ### GHCR permissions notes
 
