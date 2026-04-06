@@ -54,7 +54,6 @@ docker compose up -d
 Dashboard will be available at:
 
 - `http://localhost` (port `80`)
-- `http://localhost:443` (port `443`, plain HTTP unless you add TLS termination)
 
 Data is persisted to:
 
@@ -86,6 +85,28 @@ Pull and run:
 docker compose pull
 docker compose up -d
 ```
+
+### Copy/paste `docker-compose.yml` example
+
+```yaml
+services:
+  wixxie-home:
+    image: ghcr.io/wixxie-dev/wixxie-home:${WIXXIE_TAG:-latest}
+    container_name: wixxie-home
+    pull_policy: always
+    ports:
+      - "80:3000"
+    environment:
+      - PORT=3000
+      - POLL_INTERVAL_MS=300000
+      - JWT_SECRET=${JWT_SECRET:?JWT_SECRET is required}
+      - DISABLE_REGISTRATION=false
+    volumes:
+      - ./backend/data:/app/backend/data
+    restart: unless-stopped
+```
+
+If you need HTTPS, terminate TLS at a reverse proxy (for example Caddy, Traefik, or Nginx) and proxy to this container over HTTP on port `3000`. Mapping `443` directly to this container will trigger warnings because the app does not serve TLS by itself.
 
 ## CI and release automation
 
