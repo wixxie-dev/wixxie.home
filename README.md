@@ -50,7 +50,10 @@ Build and run:
 docker compose up -d --build
 ```
 
-Dashboard will be available at `http://localhost:3000`.
+Dashboard will be available at:
+
+- `http://localhost` (port `80`)
+- `http://localhost:443` (port `443`, plain HTTP unless you add TLS termination)
 
 Data is persisted to:
 
