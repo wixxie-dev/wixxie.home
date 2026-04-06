@@ -17,6 +17,8 @@ jobs:
           configFile: commitlint.config.cjs
 
   build:
+    needs: [commitlint]
+    if: ${{ always() && (github.event_name == 'push' || needs.commitlint.result == 'success') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
