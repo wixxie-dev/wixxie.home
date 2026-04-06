@@ -89,6 +89,13 @@ For CI, release workflow behavior, and tag strategy, see:
 
 - `docs/release-ci.md`
 
+### Recommended deploy channels
+
+- Staging/edge: `ghcr.io/wixxie-dev/wixxie-home:latest`
+- Production: `ghcr.io/wixxie-dev/wixxie-home:vX.Y.Z` (pinned tag)
+
+`latest` tracks the newest successful build from `main`. Use pinned version tags in production for predictable rollouts and fast rollback.
+
 ## Environment Variables
 
 For full development and runtime env var details, see `docs/dev.md`.
