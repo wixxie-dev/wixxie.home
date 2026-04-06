@@ -8,17 +8,20 @@ on:
 
 jobs:
   commitlint:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Lint commit messages
+        if: github.event_name == 'pull_request'
         uses: wagoid/commitlint-github-action@v6
         with:
           configFile: commitlint.config.cjs
+      - name: Skip commitlint on push
+        if: github.event_name != 'pull_request'
+        run: echo "Skipping commitlint for push events."
 
   build:
     needs: [commitlint]
-    if: ${{ always() && (github.event_name == 'push' || needs.commitlint.result == 'success') }}
+    if: ${{ needs.commitlint.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
