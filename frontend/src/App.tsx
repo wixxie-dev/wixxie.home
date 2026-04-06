@@ -25,7 +25,7 @@ function ProtectedLayout() {
     return <Navigate to="/login" replace />;
   }
 
-  return <Layout title="Wixxie Home" />;
+  return <Layout title="Wixxie Home!" />;
 }
 
 function PublicOnly({ children }: { children: React.ReactNode }) {
